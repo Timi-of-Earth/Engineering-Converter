@@ -1,0 +1,10 @@
+.header {
+    background-color: rgb(38, 53, 53);
+    height: 50px;
+    width: 100vw;
+    text-align: center;
+    color: floralwhite;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
