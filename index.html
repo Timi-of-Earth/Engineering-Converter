@@ -15,22 +15,22 @@
           <div class="box">
             <div><form class="form">
               <select id="quantitySelect" name="quantitySelect" class="quantitySelector">
-                <option value="Length">Length</option>
-                <option value="Pressure">Pressure</option>
-                <option value="Mass">Mass</option>
-                <option value="Temperature">Temperature</option>
+                <option value="length">Length</option>
+                <option value="pressure">Pressure</option>
+                <option value="mass">Mass</option>
+                <option value="temperature">Temperature</option>
               </select>
             </form></div>
             <div class="input fromTo">
               <p>From:</p>
               <div class="fromInput">
                 <form>
-                  <input type="number" class="inputText" id="num1">
-                  <select class="unitSelect">
-                    <option value="Metre">Metre</option>
-                    <option value="Feet">Feet</option>
-                    <option value="Yards">Yards</option>
-                    <option value="Miles">Miles</option>
+                  <input type="number" class="inputText" id="num1"></input>
+                  <select class="unitSelect" id="inputUnitSelect">
+                    <option value="metre">Metre</option>
+                    <option value="feet">Feet</option>
+                    <option value="yards">Yards</option>
+                    <option value="miles">Miles</option>
                   </select>
                 </form>
               </div>
@@ -40,7 +40,7 @@
               <p>To:</p>
               <div class="toInput">
                 <form>
-                  <input type="number" class="inputText" id="num2">
+                  <input class="inputText" id="num2" placeholder="0"></input>
                   <select class="unitSelect">
                     <option value="Metre">Metre</option>
                     <option value="Feet">Feet</option>
@@ -50,6 +50,9 @@
                 </form>
               </div>
             </div>
+          </div>
+          <div>
+            <button onclick="convert()">Convert</button>
           </div>
       </body>
 </html>
