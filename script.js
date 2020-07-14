@@ -1,12 +1,14 @@
-const num1 = document.getElementById("num1").nodeValue,
-num2 = document.getElementById("num2").placeholder,
+
+var num1 = document.getElementById("num1").value,
 fromUnit = document.getElementById("inputUnitSelect").value,
+toUnit = document.getElementById("outputUnitSelect").value,
 quantity = document.getElementById("quantitySelect").value;
+
 var data = {
     length: {
         metre: {
-            feet: function metreToFeet(num1) {
-                answer = num1*3.281;
+            feet: function metreToFeet(arg) {
+                answer = arg*3.281;
                 return answer;
             },
             yards: {},
@@ -34,5 +36,6 @@ var data = {
 };
 
 function convert() {
-    num2 = data.quantity.fromUnit.toUnit(num1);
+    var num2 = data.quantity.fromUnit.toUnit(num1);
+    document.getElementById("num2").placeholder = num2;
 }
