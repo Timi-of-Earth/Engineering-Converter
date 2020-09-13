@@ -1,9 +1,9 @@
+const num1 = document.getElementById("num1");
+const fromUnit = document.getElementById("inputUnitSelect");
+const toUnit = document.getElementById("outputUnitSelect");
+const quantity = document.getElementById("quantitySelect");
 
-var num1 = document.getElementById("num1").value,
-fromUnit = document.getElementById("inputUnitSelect").value,
-toUnit = document.getElementById("outputUnitSelect").value,
-quantity = document.getElementById("quantitySelect").value;
-
+//Object containing functions to convet all unit pairs available
 var data = {
     length: {
         metre: {
@@ -35,7 +35,11 @@ var data = {
     temperature: {}
 };
 
+const results = data[quantity.value][fromUnit.value][toUnit.value];
+const outputField = document.getElementById("num2");
+
+//function to initiate conversion of number in input field
 function convert() {
-    var num2 = data.quantity.fromUnit.toUnit(num1);
-    document.getElementById("num2").placeholder = num2;
+    outputField.placeholder = data[quantity.value][fromUnit.value][toUnit.value](num1.value);
+    
 }
