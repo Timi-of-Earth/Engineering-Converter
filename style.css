@@ -91,3 +91,23 @@ body {
     cursor: pointer;
     background-color: rgb(25, 85, 85);
 }
+
+
+@media screen and (max-width:740px) {
+    .unitSelect {
+        width: 90%;
+        float: none;
+        left: 5%;
+        top: 20px;
+    }
+
+    .box {
+        height: 380px;
+    }
+
+    .inputText {
+        width: 90%;
+        float: none;
+        left: 5%;
+    }
+}

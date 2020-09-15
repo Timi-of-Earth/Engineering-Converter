@@ -1,7 +1,7 @@
-const num1 = document.getElementById("num1");
-const fromUnit = document.getElementById("inputUnitSelect");
-const toUnit = document.getElementById("outputUnitSelect");
-const quantity = document.getElementById("quantitySelect");
+var num1 = document.getElementById("num1");
+var fromUnit = document.getElementById("inputUnitSelect");
+var toUnit = document.getElementById("outputUnitSelect");
+var quantity = document.getElementById("quantitySelect");
 
 //Object containing functions to convet all unit pairs available
 var data = {
@@ -75,9 +75,21 @@ var data = {
             }
         }
     },
-    pressure: {},
-    mass: {},
-    temperature: {}
+    pressure: {
+        Pascals: {},
+        Bar: {},
+        PSI: {}
+    },
+    mass: {
+        kilogram: {},
+        Tonne: {},
+        Pounds: {}
+    },
+    temperature: {
+        Kevin: {},
+        Celsius: {},
+        Farenheit: {}
+    }
 };
 
 const results = data[quantity.value][fromUnit.value][toUnit.value];
@@ -89,5 +101,26 @@ function convert() {
     
 }
 
+
 function unitSet() {
+    //return the units available in the data object for the selected quantity
+const availUnits = Object.keys(data[quantity.value]);
+
+    //remove all options from the unit select dropdown lists
+    function removeAllChildNodes(parent) {
+        while (parent.firstChild) {
+            parent.removeChild(parent.firstChild);
+        }
+    };
+    removeAllChildNodes(fromUnit);
+    removeAllChildNodes(toUnit);
+
+    //replace options with units avilable in data object for selected quantity
+    availUnits.forEach((values) => {
+        let cases = document.createElement('option');
+        cases.appendChild(document.createTextNode(values));
+        cases.value = values;
+        fromUnit.appendChild(cases);
+        toUnit.innerHTML = fromUnit.innerHTML;
+    });
 }
